@@ -16,7 +16,9 @@ $ npm install --save deku-datepicker
 import element from 'virtual-element';
 import {render, tree} from 'deku';
 
-import DatePicker from './date-picker';
+import createPicker from 'deku-datepicker';
+
+const DatePicker = createPicker();
 
 function logDate(date) {
 	console.log(date);
@@ -24,15 +26,9 @@ function logDate(date) {
 
 const app = tree(
 	<DatePicker
-		pickerClass="picker"
-		yearPickerClass="years"
-		monthPickerClass="months"
-		dayPickerClass="days"
-		dayClass="day"
-		chooseButtonClass="button"
 		chooseText="Välj datum"
 		callback={logDate} />
-	);
+);
 
 render(app, document.querySelector('main'));
 ```
@@ -41,18 +37,23 @@ render(app, document.querySelector('main'));
 ## API
 
 ```js
+const DatePicker = createPicker([opts]);
+
 <DatePicker
-		pickerClass="picker"
-		yearPickerClass="years"
-		monthPickerClass="months"
-		dayPickerClass="days"
-		dayClass="day"
-		chooseButtonClass="button"
-		chooseText="Välj datum"
-		startDate={new Date()}
-		callback={logDate} />
-	);
+	callback={logDate}
+	[chooseText="Välj datum" initialDate={new Date()}]/>
 ```
+
+```js
+opts {
+	yearPicker: <YearPicker />,
+	monthPicker: <MonthPicker />,
+	day: <Day />,
+	dayPicker: <DayPicker />,
+	chooseDayButton: <ChooseDayButton />
+}
+```
+Check source for examples.
 
 
 ## License
