@@ -37,21 +37,21 @@ render(app, document.querySelector('main'));
 ## API
 
 ```js
-const DatePicker = createPicker([opts]);
+const DatePicker = createDatePicker([opts]);
+
+/*
+	opts {
+		yearPicker: <YearPicker />,
+		monthPicker: <MonthPicker />,
+		day: <Day />,
+		dayPicker: <DayPicker />,
+		chooseDayButton: <ChooseDayButton />
+	};
+*/
 
 <DatePicker
 	callback={logDate}
 	[chooseText="Välj datum" initialDate={new Date()}]/>
-```
-
-```js
-opts {
-	yearPicker: <YearPicker />,
-	monthPicker: <MonthPicker />,
-	day: <Day />,
-	dayPicker: <DayPicker />,
-	chooseDayButton: <ChooseDayButton />
-}
 ```
 Check source for examples.
 

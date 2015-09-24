@@ -1,6 +1,6 @@
 {
   "name": "deku-datepicker",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Datepicker for deku",
   "license": "MIT",
   "repository": "ulrikaugustsson/deku-datepicker",
@@ -15,7 +15,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "mocha",
-    "prepublish": "babel lib/index.js -o src/index.js"
+    "prepublish": "babel lib --out-dir src"
   },
   "files": [
     "src/index.js"
@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "moment": "^2.10.6",
+    "ramda": "^0.17.1",
     "virtual-element": "^1.2.0"
   },
   "devDependencies": {
