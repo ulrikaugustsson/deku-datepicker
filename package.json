@@ -12,11 +12,13 @@
   "engines": {
     "node": ">=0.10.0"
   },
+  "main": "src/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "prepublish": "babel lib/index.js -o src/index.js"
   },
   "files": [
-    "index.js"
+    "src/index.js"
   ],
   "keywords": [
     ""
@@ -26,6 +28,7 @@
     "virtual-element": "^1.2.0"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "mocha": "^2.2.5"
   }
 }
